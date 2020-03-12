@@ -1,0 +1,39 @@
+
+<div class="row">
+
+  <div class="col-sm-12">
+          <div class="table-responsive">
+              <h2>Usuarios</h2>
+              <br>
+              <table id="listausuarios" class="table table-bordered table-striped table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Nombre</th>
+                          <th>Correo</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% set break = false %}
+                        {% for key, value in record_data  %}
+                            {% for val in value|slice(0, 1) %}
+                              <tr>
+                                  <td>{{ value['id'] }}</td>
+                                  <td class="text-right">{{ value['nombre'] }}</td>
+                                  <td class="text-right"> {{ value['correo'] }}</td>
+                              </tr>
+                            {% endfor %}
+                        {% endfor %}
+
+
+                  </tbody>
+              </table>
+
+
+      </div>
+  <div class="col-md-3">
+    <p><a href="{{ path('pruebadrupal.downloadusuarios') }}" class="btn btn-primary btn-lg square" role="button">Exportar</a></p>
+  </div>
+
+  <p>Ruta de archivos exportados http://localhost/drupal/sites/default/files/exportData</p>
+</div>

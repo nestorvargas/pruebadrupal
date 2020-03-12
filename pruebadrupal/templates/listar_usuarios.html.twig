@@ -1,0 +1,33 @@
+<h2>{{ titulo }}</h2>
+<p>{{ descripcion }}</p>
+<hr/>
+ 
+{% if usuarios %}
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <div class="panel-heading">Usuarios</div>      
+         
+            <table id="listausuarios" class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                            <tr>
+                                <td>{{ usuario.id }}</td>  
+                                <td class="text-right">{{ usuario.nombre }}</td>
+                                <td class="text-right">{{ usuario.correo }}</td>
+                            </tr>
+                    {% endfor %}
+
+                    
+                </tbody>
+            </table>
+
+
+    </div>
+{% endif %}

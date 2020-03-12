@@ -1,0 +1,17 @@
+pruebadrupallib:
+  version: 1.x
+  css:
+    component:
+      css/pruebadrupal.css: {}
+  js:
+    js/pruebadrupal.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+jquery_validate:
+  js:
+    js/jquery.validate.js: {}

@@ -1,0 +1,37 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+* Implements hook_schema().
+ * @ingroup asuform 
+*/
+function pruebadrupal_schema() {
+
+  $schema['myusers'] = array(
+  'description' => 'The table myusers.',
+    'fields' => array(
+      'id' => array(
+        'description' => '', 
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),  
+      'nombre' => array(
+        'description' => 'Nombre de usuario',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '', 
+      ),  
+      'correo' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'correo.',
+      ),  
+    ),  
+    'primary key' => array('id'),
+  );  
+  return $schema;
+}

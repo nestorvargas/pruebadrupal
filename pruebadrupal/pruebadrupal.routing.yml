@@ -1,0 +1,34 @@
+pruebadrupal.usuario:
+ path: '/usuario/registro'
+ defaults:
+   _controller: '\Drupal\pruebadrupal\Controller\UsuarioController::registro'
+ requirements:
+   _permission: 'access content'
+
+pruebadrupal.importarusuarios:
+ path: '/usuario/importar'
+ defaults:
+   _controller: '\Drupal\pruebadrupal\Controller\UsuarioController::importarusuarios'
+ requirements:
+   _permission: 'access content'
+
+pruebadrupal.listarusuarios:
+ path: '/usuario/consulta'
+ defaults:
+   _controller: '\Drupal\pruebadrupal\Controller\UsuarioController::listarusuarios'
+ requirements:
+   _permission: 'access content'
+
+pruebadrupal.exportarusuarios:
+ path: '/consulta/reporte'
+ defaults:
+   _controller: '\Drupal\pruebadrupal\Controller\UsuarioController::exportarusuarios'
+ requirements:
+   _permission: 'access content'
+
+pruebadrupal.downloadusuarios:
+  path: '/consulta/excel'
+  defaults:
+    _controller: '\Drupal\pruebadrupal\Controller\UsuarioController::downloadusuarios'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,62 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Variable;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Utility\WebformFormHelper;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ChangedCommand;
+use Drupal\Core\Ajax\CssCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Database\Database;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Language\Language;
+use \Symfony\Component\HttpFoundation\Response;
+
+
+function pruebadrupal_theme($existing, $type, $theme, $path) {
+  return [
+    'registro_usuario' => [
+        'variables' => [
+            'titulo' => 'Título por defecto',
+            'descripcion' => 'descripción por defecto',
+            'formulario'   => NULL
+            ],
+        'template' => 'registro_usuario'
+    ],
+    'listar_usuarios' =>[
+        'variables' => [
+            'titulo' => 'Título por defecto',
+            'descripcion' => 'descripción por defecto',
+            'usuarios'   => NULL
+            ],
+        'template' => 'listar_usuarios'
+    ],
+    'exportar_datos' => [
+        'variables' => [
+            'header_data' => NULL,
+            'record_data' => NULL,
+            ],
+        'template' => 'exportar_datos'
+    ],
+    'importar_user' => [
+        'variables' => [
+            'titulo' => 'Título por defecto',
+            'descripcion' => 'descripción por defecto',
+            'formulario'   => NULL
+            ],
+        'template' => 'importar_user'
+    ],
+
+  ];
+}
+
+
+
+?>

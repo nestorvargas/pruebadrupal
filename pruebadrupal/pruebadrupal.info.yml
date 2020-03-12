@@ -1,0 +1,6 @@
+name: Prueba Drupal
+type: module
+description: Prueba de drupal para gestión de usuarios
+package: Custom
+core: '8.x'
+version: 1.0
